@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto: PC Interativo no Build a Boat for Treasure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F7F4;
+            color: #2c3e50;
+        }
+        .retro-pc {
+            border: 4px solid #34495e;
+            background-color: #ecf0f1;
+            box-shadow: 8px 8px 0px #34495e;
+        }
+        .retro-screen {
+            background-color: #2c3e50;
+            border: 10px solid #ecf0f1;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link.active, .nav-link:hover {
+            border-bottom-color: #3498db;
+            color: #3498db;
+        }
+        .diagram-block {
+            transition: all 0.3s ease;
+            border: 2px solid #95a5a6;
+        }
+        .diagram-block.highlighted, .diagram-block:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(52, 152, 219, 0.4), 0 4px 6px -2px rgba(52, 152, 219, 0.2);
+            border-color: #3498db;
+            background-color: #ffffff;
+        }
+        .content-pane {
+            display: none;
+        }
+        .content-pane.active {
+            display: block;
+        }
+        .glow-icon:hover {
+            filter: drop-shadow(0 0 8px #3498db);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <main class="container mx-auto px-4 py-8 md:py-12">
+        
+        <!-- Hero Section -->
+        <header class="text-center mb-16 md:mb-24">
+            <h1 class="text-4xl md:text-6xl font-black text-gray-800 uppercase tracking-wider">PC Interativo</h1>
+            <h2 class="text-2xl md:text-3xl font-bold text-blue-500 mb-2">No Build a Boat for Treasure</h2>
+            <p class="text-lg text-gray-600">Um projeto de <span class="font-bold">Imperio Perú</span></p>
+        </header>
+
+        <!-- The Project Section -->
+        <section id="project" class="max-w-4xl mx-auto mb-16 md:mb-24">
+            <div class="bg-white rounded-lg shadow-lg p-8 md:p-12 border border-gray-200">
+                <h3 class="text-3xl font-bold text-center mb-6 text-gray-800">Sobre o Projeto</h3>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Dentro do universo do Roblox, foi desenvolvido um sistema que simula um computador funcional no jogo "Build a Boat for Treasure". Utilizando blocos do jogo como delays, pistões e alavancas, foi criada uma interface interativa que responde como um PC real. Esta aplicação explora a engenharia, a criatividade e a lógica por trás desta impressionante façanha.
+                </p>
+            </div>
+        </section>
+
+        <!-- How it Works Section -->
+        <section id="how-it-works" class="mb-16 md:mb-24">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">Como Funciona?</h3>
+            <div class="max-w-5xl mx-auto">
+                <nav class="flex justify-center border-b border-gray-300 mb-8 space-x-4 md:space-x-8">
+                    <button data-tab="screen" class="nav-link active text-lg font-semibold py-3 px-2">🖥️ Tela Interativa</button>
+                    <button data-tab="logic" class="nav-link text-lg font-semibold py-3 px-2">⚙️ Lógica de Delays</button>
+                    <button data-tab="scripts" class="nav-link text-lg font-semibold py-3 px-2">📄 Scripts Próprios</button>
+                    <button data-tab="design" class="nav-link text-lg font-semibold py-3 px-2">🎨 Design Gamer</button>
+                </nav>
+                <div id="tab-content" class="bg-white rounded-lg shadow-lg p-8 border border-gray-200 min-h-[250px]">
+                    <div id="screen-content" class="content-pane active">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-4">Simulação de Tela Dinâmica</h4>
+                        <p class="text-gray-700 leading-relaxed">O destaque do projeto. Ao clicar em um ícone, a "tela" do PC muda. Isso é possível graças a um sistema de pistões ativados por alavancas invisíveis, que movem blocos para criar a ilusão de uma interface gráfica que responde aos comandos do usuário.</p>
+                    </div>
+                    <div id="logic-content" class="content-pane">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-4">O Coração do Sistema</h4>
+                        <p class="text-gray-700 leading-relaxed">A funcionalidade do PC é baseada em um complexo sistema de múltiplos "delay blocks". Esses blocos são organizados para controlar o tempo e a sequência das ações. Cada delay é cuidadosamente calibrado e organizado com placas explicativas, formando a base da "unidade de processamento" do computador.</p>
+                    </div>
+                    <div id="scripts-content" class="content-pane">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-4">Uma Linguagem de Programação Única</h4>
+                        <p class="text-gray-700 leading-relaxed mb-4">Para controlar as funções, foi criada uma linguagem própria com comandos curtos e intuitivos. Isso transforma a complexa mecânica do jogo em "scripts" lógicos. Por exemplo:</p>
+                        <div class="bg-gray-800 text-white font-mono p-4 rounded-lg text-sm">
+                            <code>local roblox_main = on pistons e active=block=2players=exit=pait=piston</code>
+                        </div>
+                    </div>
+                    <div id="design-content" class="content-pane">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-4">Estética Imersiva de PC Gamer</h4>
+                        <p class="text-gray-700 leading-relaxed">A aparência não foi esquecida. O design simula um PC gamer completo, com monitores, coolers e alto-falantes, todos construídos com blocos do jogo. O objetivo foi criar uma experiência visualmente imersiva que se integra de forma coesa com a própria interface do Build a Boat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Interactive Diagram Section -->
+        <section id="diagram" class="mb-16 md:mb-24">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">Diagrama Interativo do Sistema</h3>
+            <div class="max-w-6xl mx-auto p-4 md:p-8 bg-white rounded-lg shadow-lg border border-gray-200">
+                <p class="text-center text-gray-600 mb-8">Passe o mouse sobre os blocos do diagrama para ver a descrição correspondente em destaque.</p>
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 text-center">
+                    <div id="diagram-input" data-target="screen" class="diagram-block p-4 rounded-lg w-full md:w-1/4">
+                        <p class="font-bold text-lg">INPUT</p>
+                        <p class="text-sm text-gray-600">Clique do Usuário no Ícone</p>
+                    </div>
+                    <div class="text-2xl font-bold text-gray-400">→</div>
+                    <div id="diagram-logic" data-target="logic" class="diagram-block p-4 rounded-lg w-full md:w-1/4">
+                        <p class="font-bold text-lg">LÓGICA</p>
+                        <p class="text-sm text-gray-600">Alavancas Invisíveis + Delays</p>
+                    </div>
+                    <div class="text-2xl font-bold text-gray-400">→</div>
+                     <div id="diagram-processing" data-target="scripts" class="diagram-block p-4 rounded-lg w-full md:w-1/4">
+                        <p class="font-bold text-lg">PROCESSAMENTO</p>
+                        <p class="text-sm text-gray-600">"Scripts" Personalizados</p>
+                    </div>
+                    <div class="text-2xl font-bold text-gray-400">→</div>
+                    <div id="diagram-output" data-target="screen" class="diagram-block p-4 rounded-lg w-full md:w-1/4">
+                        <p class="font-bold text-lg">OUTPUT</p>
+                        <p class="text-sm text-gray-600">Pistões Movem a "Tela"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demonstration Section -->
+        <section id="demo" class="mb-16 md:mb-24">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">Demonstração Interativa</h3>
+            <div class="max-w-4xl mx-auto">
+                <div class="retro-pc p-4 rounded-lg">
+                    <div id="interactive-screen" class="retro-screen h-64 md:h-96 rounded-md p-6 flex flex-col items-center justify-center transition-all duration-500">
+                        <!-- Screen content will be injected here by JS -->
+                    </div>
+                    <div class="flex justify-center items-center p-4 space-x-6 bg-gray-200 rounded-b-md">
+                        <p class="font-semibold text-gray-700">Clique nos ícones para simular a troca de tela:</p>
+                        <button class="screen-icon glow-icon" data-app="roblox">
+                            <span class="text-4xl">R</span>
+                        </button>
+                        <button class="screen-icon glow-icon" data-app="browser">
+                            <span class="text-4xl">🌐</span>
+                        </button>
+                        <button class="screen-icon glow-icon" data-app="paint">
+                            <span class="text-4xl">🎨</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Future Development Section -->
+        <section id="future" class="max-w-4xl mx-auto text-center">
+             <h3 class="text-3xl font-bold text-center mb-6 text-gray-800">Desenvolvimento Futuro</h3>
+             <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                O projeto está em constante evolução. Os próximos passos incluem o desenvolvimento de novos scripts para simular aplicativos mais complexos, como um navegador, um programa de desenho (Paint) e sistemas de login, tudo dentro das mecânicas do jogo.
+            </p>
+        </section>
+    </main>
+
+    <footer class="text-center p-6 bg-gray-800 text-white mt-16">
+        <p>&copy; 2025 - Apresentação do projeto de Imperio Perú. Criado com 💙.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.nav-link');
+            const contentPanes = document.querySelectorAll('.content-pane');
+            const tabContentContainer = document.getElementById('tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const target = tab.dataset.tab;
+
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    contentPanes.forEach(pane => {
+                        pane.classList.remove('active');
+                        if (pane.id === `${target}-content`) {
+                            pane.classList.add('active');
+                        }
+                    });
+                });
+            });
+
+            const diagramBlocks = document.querySelectorAll('.diagram-block');
+            diagramBlocks.forEach(block => {
+                block.addEventListener('mouseenter', () => {
+                    const targetTab = block.dataset.target;
+                    const correspondingTab = document.querySelector(`.nav-link[data-tab="${targetTab}"]`);
+                    const correspondingContent = document.getElementById(`${targetTab}-content`);
+
+                    tabs.forEach(t => t.classList.remove('active'));
+                    correspondingTab.classList.add('active');
+
+                    contentPanes.forEach(pane => pane.classList.remove('active'));
+                    correspondingContent.classList.add('active');
+                    
+                    block.classList.add('highlighted');
+                });
+                
+                block.addEventListener('mouseleave', () => {
+                   block.classList.remove('highlighted');
+                });
+            });
+
+            const screen = document.getElementById('interactive-screen');
+            const screenIcons = document.querySelectorAll('.screen-icon');
+
+            const appContent = {
+                welcome: `
+                    <h2 class="text-3xl font-bold text-white mb-4">Bem-vindo!</h2>
+                    <p class="text-xl text-gray-300">Sistema Operacional BABFT v1.0</p>
+                    <p class="text-gray-400 mt-4">Clique em um ícone abaixo.</p>`,
+                roblox: `
+                    <h2 class="text-3xl font-bold text-white mb-4">Carregando Roblox...</h2>
+                    <div class="w-16 h-16 border-4 border-dashed border-white rounded-full animate-spin"></div>
+                    <p class="text-gray-400 mt-4">Simulação de pistões ativados.</p>`,
+                browser: `
+                    <h2 class="text-2xl font-bold text-white mb-4">Navegador (Em Desenvolvimento)</h2>
+                    <div class="w-full bg-gray-200 rounded-full p-1">
+                        <div class="bg-blue-500 h-6 rounded-full w-3/4"></div>
+                    </div>
+                    <p class="text-gray-400 mt-4">Futuro: Interface de busca.</p>`,
+                paint: `
+                    <h2 class="text-2xl font-bold text-white mb-4">Paint (Em Desenvolvimento)</h2>
+                     <div class="grid grid-cols-4 gap-2">
+                        <div class="w-8 h-8 bg-red-500 rounded"></div>
+                        <div class="w-8 h-8 bg-green-500 rounded"></div>
+                        <div class="w-8 h-8 bg-yellow-500 rounded"></div>
+                        <div class="w-8 h-8 bg-purple-500 rounded"></div>
+                     </div>
+                    <p class="text-gray-400 mt-4">Futuro: Ferramentas de desenho.</p>`
+            };
+            
+            function setScreenContent(appName) {
+                 screen.innerHTML = appContent[appName] || appContent['welcome'];
+            }
+
+            screenIcons.forEach(icon => {
+                icon.addEventListener('click', () => {
+                    setScreenContent(icon.dataset.app);
+                });
+            });
+            
+            setScreenContent('welcome');
+        });
+    </script>
+</body>
+</html>
